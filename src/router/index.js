@@ -54,26 +54,38 @@ export const constantRoutes = [
       meta: { title: '首页', icon: 'dashboard' }
     }]
   },
-
+  // 添加菜单栏
   {
-    path: '/example',
+    path: '/blog',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/blog/content',
+    name: 'Content',
+    meta: { title: '内容', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'article',
+        name: '文章',
+        component: () => import('@/views/content/article.vue'),
+        meta: { title: '文章'}
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
+        path: 'comment',
+        name: '评论',
+        component: () => import('@/views/content/comment.vue'),
+        meta: { title: '评论'}
+      },
+      {
+        path: 'page',
+        name: '页面',
+        component: () => import('@/views/content/page.vue'),
+        meta: { title: '页面'}
+      },
+      {
+        path: 'attachment',
+        name: '附件',
+        component: () => import('@/views/content/attachment.vue'),
+        meta: { title: '附件' }
+      },
     ]
   },
 
